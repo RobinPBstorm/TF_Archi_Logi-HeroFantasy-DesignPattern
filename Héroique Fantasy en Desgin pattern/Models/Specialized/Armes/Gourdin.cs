@@ -1,0 +1,16 @@
+﻿using Héroique_Fantasy_en_Desgin_pattern.Models.Abstractions.Armes;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Héroique_Fantasy_en_Desgin_pattern.Models.Specialized.Armes
+{
+    public class Gourdin : ArmeContact
+    {
+        public Gourdin(string nom = "Gourdin", int degat = 4) : base(nom, degat)
+        {
+        }
+    }
+}
