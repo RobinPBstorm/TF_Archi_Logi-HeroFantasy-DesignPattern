@@ -5,4 +5,6 @@
 ## Factory
 
 La **boutique d'équipement** constitue la factory dans ce projet.
-Il va fournit des objet implémentant soit **IArmure** ou **IArme** en fonction de la méthode demandée.
+Elle va fournit des objet implémentant soit **IArmure** ou **IArme** en fonction de la méthode demandée.
+
+Nos personnages pourront ou non équiper les objets que ma factory nous donne en fonction de nos contraintes.
