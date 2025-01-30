@@ -1,5 +1,6 @@
 ﻿using Héroique_Fantasy_en_Desgin_pattern.Models.Abstractions.Armures;
 using Héroique_Fantasy_en_Desgin_pattern.Models.Abstractions.Personnages;
+using Héroique_Fantasy_en_Desgin_pattern.Models.Exceptions;
 using Héroique_Fantasy_en_Desgin_pattern.Models.Interfaces;
 
 namespace Héroique_Fantasy_en_Desgin_pattern.Models.Specialized.Personnages
@@ -20,8 +21,7 @@ namespace Héroique_Fantasy_en_Desgin_pattern.Models.Specialized.Personnages
         {
             if (armure is not ArmureLegere)
             {
-                Console.WriteLine("Les elfes ne peuvent porter que des armure légère!");
-                return false;
+                throw new NotAdaptedEquipementException("Les elfes ne peuvent portée que des armures légères");
             }
             ArmureEquipee = armure;
             return true;

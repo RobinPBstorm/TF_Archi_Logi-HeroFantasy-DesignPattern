@@ -1,6 +1,7 @@
 ﻿using Héroique_Fantasy_en_Desgin_pattern.Models.Abstractions.Armes;
 using Héroique_Fantasy_en_Desgin_pattern.Models.Abstractions.Armures;
 using Héroique_Fantasy_en_Desgin_pattern.Models.Abstractions.Personnages;
+using Héroique_Fantasy_en_Desgin_pattern.Models.Exceptions;
 using Héroique_Fantasy_en_Desgin_pattern.Models.Interfaces;
 
 namespace Héroique_Fantasy_en_Desgin_pattern.Models.Specialized.Personnages
@@ -15,8 +16,7 @@ namespace Héroique_Fantasy_en_Desgin_pattern.Models.Specialized.Personnages
         {
             if (arme is ArmeDistance)
             {
-                Console.WriteLine("Les orques ne peuvent pas utiliser d'arme à distance!");
-                return false;
+                throw new NotAdaptedEquipementException("Les orques ne peuvent pas utiliser d'arme à distance!");
             }
             ArmeEquipee = arme;
             return true;
@@ -26,8 +26,7 @@ namespace Héroique_Fantasy_en_Desgin_pattern.Models.Specialized.Personnages
         {
             if (armure is ArmureLegere)
             {
-                Console.WriteLine("Les orques ne peuvent pas porter d'armure légère!");
-                return false;
+                throw new NotAdaptedEquipementException("Les orques ne peuvent pas porter d'armure légère!");
             }
 
             ArmureEquipee = armure;

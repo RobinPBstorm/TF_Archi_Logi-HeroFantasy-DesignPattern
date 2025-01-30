@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Héroique_Fantasy_en_Desgin_pattern.Models.Exceptions
+{
+    public class NoNameGivenException : Exception
+    {
+        public NoNameGivenException(string? message = "Aucun nom n'a été donné pour cette élément!") : base(message)
+        {
+        }
+    }
+}

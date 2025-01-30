@@ -1,6 +1,7 @@
 ﻿using Héroique_Fantasy_en_Desgin_pattern.Models.Abstractions.Armures;
 using Héroique_Fantasy_en_Desgin_pattern.Models.Abstractions.Personnages;
 using Héroique_Fantasy_en_Desgin_pattern.Models.Interfaces;
+using Héroique_Fantasy_en_Desgin_pattern.Models.Specialized.Armes;
 
 namespace Héroique_Fantasy_en_Desgin_pattern.Models.Specialized.Personnages
 {

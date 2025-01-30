@@ -42,7 +42,7 @@ namespace Héroique_Fantasy_en_Desgin_pattern.Models
                 return new ArmureDeCuir();
             }
         }
-        public Armure FournirArmureIntermediaire(bool luxueuse = false)
+        public ArmureIntermediaire FournirArmureIntermediaire(bool luxueuse = false)
         {
             if (luxueuse)
             {

@@ -10,6 +10,7 @@
 
 using Héroique_Fantasy_en_Desgin_pattern.Models;
 using Héroique_Fantasy_en_Desgin_pattern.Models.Abstractions.Personnages;
+using Héroique_Fantasy_en_Desgin_pattern.Models.Exceptions;
 using Héroique_Fantasy_en_Desgin_pattern.Models.Specialized.Armes;
 using Héroique_Fantasy_en_Desgin_pattern.Models.Specialized.Armures;
 using Héroique_Fantasy_en_Desgin_pattern.Models.Specialized.Personnages;
@@ -18,18 +19,97 @@ List<Personnage> monEquipe = new List<Personnage>();
 BoutiqueEquipement aLEnclumeUsee = new BoutiqueEquipement();
 
 
-Humain filibert = new Humain("filibert");
-while (!filibert.Equiper(aLEnclumeUsee.FounirArmure())) { }
+Humain filibert = new Humain("Filibert");
+bool equiper = false;
+do
+{
+    try
+    {
+        equiper = filibert.Equiper(aLEnclumeUsee.FounirArmure());
+    }
+    catch(NotAdaptedEquipementException naee)
+    {
+        Console.WriteLine(naee.Message);
+        equiper = false;
+    }
+}
+while (!equiper);
 monEquipe.Add(filibert);
 
-Orque maurice = new Orque("maurice");
-while (!maurice.Equiper(aLEnclumeUsee.FounirArmure())) { }
-while (!maurice.Equiper(aLEnclumeUsee.FounirArme())) { }
+Orque maurice = new Orque("Maurice");
+equiper = false;
+do
+{
+    try
+    {
+        equiper = maurice.Equiper(aLEnclumeUsee.FounirArmure());
+    }
+    catch (NotAdaptedEquipementException naee)
+    {
+        Console.WriteLine(naee.Message);
+        equiper = false;
+    }
+}
+while (!equiper);
+equiper = false;
+do
+{
+    try
+    {
+        equiper = maurice.Equiper(aLEnclumeUsee.FounirArme());
+    }
+    catch (NotAdaptedEquipementException naee)
+    {
+        Console.WriteLine(naee.Message);
+        equiper = false;
+    }
+}
+while (!equiper);
 monEquipe.Add(maurice);
 
-Elfe duran = new Elfe("duran");
-while (!duran.Equiper(aLEnclumeUsee.FounirArmure())) { }
-while (!duran.Equiper(aLEnclumeUsee.FounirArme())) { }
+Elfe duran = new Elfe("Duran");
+equiper = false;
+do
+{
+    try
+    {
+        equiper = duran.Equiper(aLEnclumeUsee.FounirArmure());
+    }
+    catch (NotAdaptedEquipementException naee)
+    {
+        Console.WriteLine(naee.Message);
+        equiper = false;
+    }
+}
+while (!equiper);
+equiper = false;
+do
+{
+    try
+    {
+        equiper = duran.Equiper(aLEnclumeUsee.FounirArmure());
+    }
+    catch (NotAdaptedEquipementException naee)
+    {
+        Console.WriteLine(naee.Message);
+        equiper = false;
+    }
+}
+while (!equiper); 
+equiper = false;
+do
+{
+    try
+    {
+        equiper = duran.Equiper(aLEnclumeUsee.FounirArme());
+    }
+    catch (NotAdaptedEquipementException naee)
+    {
+        Console.WriteLine(naee.Message);
+        equiper = false;
+    }
+}
+while (!equiper);
 monEquipe.Add(duran);
 
 Console.WriteLine();

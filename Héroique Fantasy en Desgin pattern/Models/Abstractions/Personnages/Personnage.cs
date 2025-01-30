@@ -1,19 +1,35 @@
 ﻿using Héroique_Fantasy_en_Desgin_pattern.Models.Abstractions.Armures;
+using Héroique_Fantasy_en_Desgin_pattern.Models.Exceptions;
 using Héroique_Fantasy_en_Desgin_pattern.Models.Interfaces;
 
 namespace Héroique_Fantasy_en_Desgin_pattern.Models.Abstractions.Personnages
 {
     public abstract class Personnage
     {
-        public string Nom { get; set; }
+        protected string _Nom;
+        public string Nom 
+        {
+            get
+            {
+                return _Nom;
+            }
+            set
+            {
+                if (value is null)
+                {
+                    throw new NoNameGivenException("Aucun nom a été donné à ce Personnage!");
+                }
+                _Nom = value;
+            }
+        }
         public IArme ArmeEquipee { get; protected set; } = null!;
         public IArmure ArmureEquipee { get; protected set; } = null!;
 
         protected Personnage(string nom, IArme armeEquipee = null!, IArmure armureEquipee = null!)
         {
             Nom = nom;
-            EquiperArme(armeEquipee);
-            EquiperArmure(armureEquipee);
+            Equiper(armeEquipee);
+            Equiper(armureEquipee);
         }
 
         public abstract bool EquiperArmure(IArmure armure);
